@@ -6,6 +6,17 @@ current_path = os.getcwd()
 env_path = f"{current_path}/.env"
 load_dotenv(dotenv_path=env_path)
 
+__import__("pysqlite3")
+import sys
+
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join("venv3.11/lib/python3.11/site-packages/chromadb/__init__.py", "db.sqlite3"),
+    }
+}
 
 class Settings:
     PROJECT_NAME: str = "Convene AI API"
