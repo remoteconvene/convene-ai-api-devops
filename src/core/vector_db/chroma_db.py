@@ -1,4 +1,4 @@
-# import chromadb
+import chromadb
 from langchain_community.vectorstores.chroma import Chroma
 
 from src.core.config.settings import settings
@@ -17,16 +17,14 @@ def get_vector_db_archived():
 
 
 def get_chroma_client_archived():
-    # client = chromadb.PersistentClient(path=persist_directory)
-    client = None
+    client = chromadb.PersistentClient(path=persist_directory)
     return client
 
 
 def get_chroma_client():
-    # client = chromadb.HttpClient(
-    #     host=settings.CHROMA_DB_HOST, port=settings.CHROMA_DB_PORT
-    # )
-    client = None
+    client = chromadb.HttpClient(
+        host=settings.CHROMA_DB_HOST, port=settings.CHROMA_DB_PORT
+    )
     return client
 
 
