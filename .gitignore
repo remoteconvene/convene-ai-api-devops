@@ -1,0 +1,5 @@
+.git
+.idea
+Pipfile.lock
+__pycache__
+.vscode
