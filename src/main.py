@@ -85,9 +85,9 @@ def configure_cors(api: FastAPI):
 
 def start_api():
     api = init_fast_api()
-    # connect_sql_db()
-    # create_sql_tables()
-    # create_default_sql_users()
+    connect_sql_db()
+    create_sql_tables()
+    create_default_sql_users()
     connect_mongo_db()
     include_router(api)
     configure_cors(api)
